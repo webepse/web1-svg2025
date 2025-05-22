@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/flubber@0.3.0/build/flubber.min.js"></script>
+</head>
+<body>
+    
+    
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve" width="500" height="500">
+
+   <path class="path" style="fill:#EAC928;" d="M185,236v12v99c0,0,58.5,0.5,58,0h58V229h-6h-27h-15h-9h-8h-8h-18h-25V236z"/>
+    <path class="path" id="p1" style="fill:#EAC928;" d="M185.5,227.5h-122c0,0,69,20,56,69c0,0,103-14,123,50c-1-1,8-58,124-50c-1,0-21-44,55-69
+	c-1,1-121,0-121,0s3,32-43,29c1,1-5-22-5-22l-4,11h-13l-3-11l-5,22C227.5,256.5,188.5,265.5,185.5,227.5S185.5,227.5,185.5,227.5z"
+	/>
+ 
+    
+ 
+</svg>
+    
+    <script>
+    
+        
+
+var pathStrings = Array.from(document.querySelectorAll(".path")).map(d => d.getAttribute("d"));
+
+
+d3.selectAll(".path")
+  .filter(function(d, i) { return i; })
+  .remove();
+
+d3.select(".path")
+  .style("display", "block")
+  .call(animate);
+
+function animate(sel) {
+  var start = pathStrings.shift(),
+      end = pathStrings[0];
+
+  pathStrings.push(start);
+
+  sel
+    .datum({ start, end })
+    .transition()
+    .duration(1500)
+    .delay(2000)
+    .attrTween("d", function(d){
+      return flubber.interpolate(d.start, d.end, { maxSegmentLength: 1 })
+    })
+    .on("end", function() {
+      //sel.call(animate);
+    });
+}
+
+
+    </script>
+
+    
+</body>
+</html>

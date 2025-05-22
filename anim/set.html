@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>svg rectangle</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<svg width="800" height="800" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<ellipse cx="300" cy="300" rx="70" ry="30" style="fill: #26B90E; stroke: #9A0E9F;">
+				<set attributeName="visibility" attributeType="CSS" to="hidden" begin="triangle.click" />
+				<set attributeName="visibility" attributeType="CSS" to="visible" begin="triangle2.click" />
+			</ellipse>
+			<path id="triangle" d="M70,40 l-20,30 l40,0 z" style="fill: #F6FF00; stroke: #2B77D5;" />
+
+			<path id="triangle2" d="M120,40 l20,30 l20,-30 z" style="fill: #2B77D5; stroke: #F6FF00;" />
+			
+			
+		</svg>		 
+	</body>
+</html>

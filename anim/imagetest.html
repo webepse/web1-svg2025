@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>svg rectangle</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<svg width="800" height="800" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<image id="rectangleQuiBouge" x="60" y="30" width="200px" height="150px" xlink:href="bt.png" >
+
+				<animate id="RectangleMove" attributeName="x" attributeType="XML" from="60" to="200" begin="2s" end="cercleQuiBouge.click" dur="3s" fill="freeze" />
+				
+			</image>
+
+
+			<circle id="cercleQuiBouge" cx="100" cy="200" r="100" style="fill: #F70701; stroke: #FFA200;">
+
+				<animate attributeName="cy" attributeType="XML" from="200" to="300" begin="rectangleQuiBouge.mouseover" dur="3s" fill="freeze" />
+
+			</circle>		
+		</svg>		 
+	</body>
+</html>
