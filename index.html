@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="500" height="500">
+        <rect id="rectangle" x="60" y="30" width="30" height="20" style="fill: #0b24be; stroke:#333333;">
+
+            <animate id="move1" attributeName="x" attributeType="XML" from="60" to="200" begin="2s" dur="3s" fill="freeze"/>
+
+        </rect>
+
+        <circle cx="50" cy="70" r="15" style="fill: red; stroke:orange;">
+            <animate attributeName="cy" attributeType="XML" from="70" to="170" id="move2" begin="move1.begin+2s" dur="3s" fill="freeze" restart="whenNotActive" />
+        </circle>
+    </svg>
+</body>
+</html>
+
